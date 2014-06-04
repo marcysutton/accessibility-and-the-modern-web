@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Accessiblility of Web Components</title>
+
+		<meta name="description" content="A presentation on the Accessibility of Web Components">
+		<meta name="author" content="Marcy Sutton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/marcysutton.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/solarized_dark.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+    <script src="lib/js/jquery-1.10.2.min.js"></script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="slide1">
+          <h2>Welcome to Marklar</h2>
+          <img src="img/marklar-joke.jpg" alt="South Park scene" />
+          <p class="offscreen">A Marklar walks into a Marklar.
+          Marklar asks the marklar, "do you have any Marklar?"</p>
+          <p class="offscreen">The Marklar shakes his Marklar and says "No, we only have Marklar"</p>
+          <h2 class="offscreen">To navigate to the next slide, use the space-bar.</h2>
+			  </section>
+
+				<section id="slide2">
+          <p>This has been an exercise in...</p>
+          <h2 class="h1-style">Semantics</h2>
+          <aside class="notes">
+          What the Marklar? If we only use one word for everything, it has no meaning. Today we're going to talk about a new technology, Web Components, which runs the risk of polluting the internet with a bunch of Marklar: soulless div tags, essentially, that don't communicate role or purpose to non-visual users.
+
+          I'm Marcy Sutton, not a freelance Marklar but rather a full-time developer at Substantial, a 60-person product studio in Seattle. I've spent the past few months expanding my own skillset while improving the accessibility of web applications such as a a fitness app and a whiskey recommendations app. Because why shouldn't those appliations be accessible to all people?! I grew to love accessibility at my previous job because it added a valuable dimension to my work.
+          </aside>
+				</section>
+
+				<section id="slide3">
+          <h2>No, thanks</h2>
+          <h3 class="offscreen">The worst HTML markup where every tag and attribute is "marklar"</h3>
+          <pre style="width:95%;"><code class="html" style="padding-top:0;max-height:550px;">
+    &lt;marklar style="background-image: url(marklar.gif);"&gt;
+      &lt;marklar&gt;Marklar was a secret Apple development program
+      to put Mac OS X on the Intel x86 microprocessor. Ten years
+      ago, the first rumors of Marklar emerged.&lt;/marklar&gt;
+      &lt;marklar href="#" onclick="doMarklar()"&gt;More&lt;/marklar&gt;
+    &lt;/marklar&gt;
+          </code></pre>
+				</section>
+
+        <section id="slide4" class="name-slide">
+          <h1>Accessiblity of Web Components</h1>
+          <p class="byline"><span>Created by</span> <a href="http://marcysutton.com" target="_blank" title="Link opens in a new window">Marcy Sutton</a></p>
+          <p><a class="substantial-logo" href="http://substantial.com" target="_blank" title="Link opens in a new window">SUBSTANTIAL</a>
+          </p>
+        </section>
+
+        <section id="slide5">
+          <h2>Accessibility Challenges</h2>
+          <ul>
+            <li>Semantics</li>
+            <li>Keyboard access</li>
+            <li>Text alternatives</li>
+            <li>Color contrast</li>
+          </ul>
+          <aside class="notes">
+Semantics: the type of element object matters to a screen reader. Keyboard access: this is actually a wider audience than just screen reader users (broken arm? dead mouse?). You should be able to tab through any webpage and use everything with only a keyboard. Super important to people with poor motor control or who are using assistive technology. Text alternatives: this includes alt text on images, form labels (or ARIA equivalents), and offscreen text (I use this a LOT to add context to elements without text alternatives in the visual design).
+          </aside>
+        </section>
+
+        <section id="slide6">
+          <h2>Web Components</h2>
+          <p class="highlight">New standards moving through the W3C</p>
+          <ul>
+            <li>Custom Elements</li>
+            <li>Shadow DOM</li>
+            <li>Templates</li>
+            <li>HTML Imports</li>
+            <li>Decorators</li>
+          </ul>
+        </section>
+
+        <section id="slide7">
+          <h2>Today</h2>
+          <ul>
+            <li>Web Components!</li>
+            <li>Shadow DOM</li>
+            <li>Custom Elements</li>
+          </ul>
+        </section>
+
+        <section id="slide8">
+          <h2>Why are we excited?</h2>
+          <ul>
+            <li>Extend the DOM</li>
+            <li>Less waiting for browsers</li>
+            <li>Minimize conflicts</li>
+          </ul>
+          <aside class="notes">
+Less waiting for browser standards: like fancy HTML5 inputs. But the semantics of those matter.
+          </aside>
+        </section>
+
+        <section id="slide9">
+          <h2 class="h1-style">Shadow DOM</h2>
+          <p class="bigItalic" style="padding: 0 1em;">Encapsulation by hiding DOM subtrees under shadow roots</p>
+          <aside class="notes">
+Speaking of conflicts:
+Shadow DOM is designed to provide encapsulation by hiding DOM subtrees under shadow roots. It provides a method of establishing and maintaining functional boundaries between DOM trees and how these trees interact with each other within a document, thus enabling better functional encapsulation within the DOM.
+
+Shadow host - an element hosting one or more Shadow DOM node trees.
+Shadow tree - a node tree hosted by a shadow host.
+Shadow root - the root node of a shadow tree.
+          </aside>
+        </section>
+
+        <section id="slide10">
+          <h2>Trees</h2>
+          <img src="img/tree.png" alt="Tree object representation compared to tree in nature">
+          <p><small>Source: <a href="http://www.eecs.berkeley.edu/~bh/ssch18/trees.html" target="_blank" title="Link opens in a new window">Simply Scheme, Chapter 18: Trees</a></small></p>
+        </section>
+
+        <section id="slide11">
+          <h2 class="h3-style">Shadow DOM and the Browser's Rendering Tree</h2>
+          <img src="img/shadow-dom.png" alt="Browser rendering tree" />
+          <p><small>Source: <a href="http://www.w3.org/TR/shadow-dom/" target="_blank" title="Link opens in a new window">W3C Shadow DOM Specification</a></small></p>
+          <aside class="notes">
+            This boundary illustrates my biggest question about screen readers: they provide a protected area where scripts and styles don’t cross, so how could assistive technology pass through?
+          </aside>
+        </section>
+
+        <section id="slide12">
+          <h2>Rendering Engine Basic Flow</h2>
+          <p><em>(Webkit)</em></p>
+          <img src="img/webkitflow.png" alt="Webkit rendering engine main flow" style="background-color: #fff; padding: 1em;">
+          <p><small>Source: <a href="http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/" target="_blank" title="Link opens in a new window">How Browsers Work, HTML5 Rocks</a></small></p>
+          <aside class="notes">
+Browsers are the most complex applications. They have gotten really good at fixing our broken HTML. They translate HTML tags into objects which are affected by JavaScript and CSS. For example, we extend the DOM with JavaScript. We hide inactive hover menus or hidden content with “display: none;”. These are things that change our markup from its original form in View Source to its rendered form in the Element Inspector.
+          </aside>
+        </section>
+
+        <section id="slide13">
+          <h2>Trees &ldquo;as rendered&rdquo;</h2>
+          <img src="img/happy-little-tree.jpg" alt="Bob Ross happy little tree">
+          <aside class="notes">
+The DOM "as rendered", including Shadow DOM, presents one tree to assistive technology. That is what makes it accessible.
+          </aside>
+        </section>
+
+        <section id="slide14">
+          <h2>How do I Shadow DOM?</h2>
+          <pre><code class="javascript">
+var template = document.querySelector('template'),
+    tacoSurprise = Object.create(HTMLElement.prototype);
+
+tacoSurprise.createdCallback = function() {
+  var shadowRoot = this.createShadowRoot(),
+      clone = template.content.cloneNode(true);
+
+  shadowRoot.appendChild(clone);
+  template.remove();
+};
+
+document.registerElement("taco-surprise", {
+  prototype: tacoSurprise
+});
+          </code></pre>
+        </section>
+
+        <section id="slide15">
+          <h2><a href="demos/demo2.html" target="_blank" title="Link opens in a new window">Demo <span class="offscreen">opens in a new window</span></a></h2>
+          <aside class="notes">
+DEMO VoiceOver, call attention to trees 'as rendered'
+          </aside>
+        </section>
+
+        <section id="slide16">
+          <h2>Current Native Support</h2>
+          <h3>Shadow DOM</h3>
+          <ul class="normal-list">
+            <li>Chrome 25+</li>
+            <li>Opera 15+</li>
+            <li>Firefox 30+</li>
+            <li>Chrome for Android 33+</li>
+          </ul>
+          <div style="clear:both; margin-top: 1em;">
+            <img src="img/browser-icons.png" alt="Browser Icons" style="max-width: 500px; width: 100%;">
+          </div>
+          <p><small>Source: <a href="http://caniuse.com/shadowdom" target="_blank" title="Link opens in a new window">Caniuse.com</a></small></p>
+        </section>
+
+        <section id="slide17">
+          <h2>Polyfills</h2>
+          <ul>
+            <li>Polymer</li>
+            <li>X-Tag*</li>
+          </ul>
+          <p style="margin-top: 1em;"><small>*Shadow DOM coming soon</small></p>
+          <aside class="notes">
+Polymer can get you to IE10, X-Tag can get you to IE9 but it doesn’t yet support Shadow DOM. And I heard they might do away with it and work more functionality into Brick. Which would be more similar to the approach of Polymer, which has its shim, which will fill in less and less over time as browsers evolve, while also providing optional components for you to use.
+          </aside>
+        </section>
+
+        <section id="slide18">
+          <h2>Custom Elements</h2>
+          <div class="large-tag">
+            &lt;taco-button&gt;
+          </div>
+          <aside class="notes">
+The elements of your dreams need semantics.
+          </aside>
+        </section>
+
+        <section id="slide19">
+          <p class="bigItalic highlight">How to add semantics</p>
+          <h2>Extend a native element</h2>
+          <pre style="width: auto;"><code class="javascript">
+var TacoButtonPrototype = Object.create(HTMLButtonElement.prototype);
+var TacoButton = document.registerElement('taco-button', {
+  prototype: TacoButtonPrototype,
+  extends: 'button'
+});
+var tacoButton = new TacoButton();
+document.body.appendChild(tacoButton).textContent = 'Give me tacos';
+tacoButton = document.querySelector('button[is=taco-button]');
+          </code></pre>
+        </section>
+
+        <section id="slide20">
+          <p class="bigItalic highlight">How to add semantics</p>
+          <h2>Use native child elements</h2>
+          <pre><code class="html">
+      &lt;taco-surprise&gt;
+        &lt;h2&gt;Taco Surprise!&lt;/h2&gt;
+        &lt;button&gt;Give me tacos&lt;/button&gt;
+
+        &lt;output&gt;
+          &lt;img src="" alt="" aria-hidden="true"&gt;
+          &lt;p class="error hidden"&gt;Or give me death&lt;/p&gt;
+        &lt;/output&gt;
+      &lt;/taco-surprise&gt;
+          </code></pre>
+        </section>
+
+        <section id="slide21">
+          <p class="bigItalic highlight">How to add semantics</p>
+          <h2>Attributes</h2>
+          <p>ARIA and Tab Index</p>
+          <pre style="width: 100%"><code class="html">
+&lt;taco-button role="button" tabIndex="0"&gt;tacos!&lt;/taco-button&gt;
+          </code></pre>
+          <pre style="width: 100%"><code class="html">
+&lt;pork-slider role="slider" aria-valuemin="1" aria-valuemax="5"
+aria-valuenow="0"&gt;&lt;/pork-slider&gt;
+          </code></pre>
+        </section>
+
+        <section id="slide22">
+          <div id="textcontentdiv">
+            <h2 style="margin-bottom:0;">The Ultimate<br>Web Component</h2>
+            <div aria-hidden="true" class="cleardiv"></div>
+            <x-tacobutton id="tacobutton" role="button" tabIndex="0">Give me tacos</x-tacobutton>
+          </div>
+          <div aria-live="polite" class="offscreen"></div>
+          <div id="imgdiv"></div>
+        </section>
+
+        <section id="slide23">
+          <h2>Custom Elements</h2>
+          <h3>Native Support</h3>
+          <ul>
+            <li>Chrome</li>
+            <li>Opera</li>
+            <li>Firefox (Nightly)</li>
+          </ul>
+          <p style="margin-top: 1em;font-size: 0.75em">Source: <a href="http://jonrimmer.github.io/are-we-componentized-yet/" target="_blank" title="Link opens in a new window">are we componentized yet?</a><br>
+          Note: this stuff moves <em>fast</em>!</p>
+        </section>
+        <section id="slide24">
+          <h2>Resources</h2>
+          <p><a href="http://tiny.cc/a11y-web-components/" target="_blank" title="Link opens in a new window">http://tiny.cc/a11y-web-components/</a></p>
+          <div style="margin-top: 2em;">
+            <h3>Thank you:</h3>
+            <img src="img/mozilla_wordmark.png" alt="Mozilla" style="background-color: #fff; margin-right: 0.5em; width: 40%">
+            <img src="img/twilio_logobrand.png" alt="Twilio" style="background-color: #fff; margin-left: 0.5em; width: 40%">
+          </div>
+        </section>
+			</div>
+      <footer>
+        <div class="copyright">Accessibility of Web Components<br />
+          <a href="http://twitter.com/marcysutton" target="_blank" title="Link opens in a new window">@MarcySutton</a> <span aria-hidden="true">/</span> <a href="http://substantial.com" target="_blank" title="Link opens in a new window">Substantial</a></div>
+      </footer>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+    <script src="//static.twilio.com/libs/twiliojs/1.1/twilio.min.js"></script>
+    <script src="lib/js/x-tag-components.min.js"></script>
+    <script src="demos/js/twilio-app.js"></script>
+    <script src="demos/js/random-img.js"></script>
+    <script src="demos/js/x-tacobutton.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+					{ src: 'plugin/accessibility-helpers/accessibility-helpers.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
