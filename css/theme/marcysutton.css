@@ -1,9 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 /**
  * Default theme for reveal.js.
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @font-face {
   font-family: 'League Gothic';
   src: url("../../lib/font/league_gothic-webfont.eot");
@@ -70,13 +70,15 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: black url("dark_colors_background.jpg") repeat center top; }
+  background: black url("backgrounds/sky.jpg") repeat-x center top;
+  background-size: cover; }
 
 .reveal {
+  background-color: rgba(0, 0, 0, 0.3);
   font-family: "Lato", sans-serif;
   font-size: 36px;
   font-weight: 200;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: #eeeeee; }
   .reveal pre code {
     background-color: black;
@@ -85,20 +87,26 @@ body {
     line-height: 1.45em;
     max-height: 500px; }
   .reveal footer {
-    position: fixed;
-    height: 40px;
-    width: 100%;
-    bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    bottom: 0px;
+    height: 30px;
     left: 0;
-    font-size: 45%;
+    font-size: 47%;
     line-height: 1.25em;
-    text-align: left; }
+    position: fixed;
+    text-align: left;
+    width: 100%;
+    z-index: 1; }
     .reveal footer .copyright {
       display: inline-block;
-      color: #999999;
-      margin: 0px 15px;
+      color: #cccccc;
+      padding: 0px 15px;
       letter-spacing: -0.01em;
-      font-style: italic; }
+      font-style: italic;
+      vertical-align: middle; }
+    .reveal footer [aria-hidden=true] {
+      color: #999999;
+      margin: 0 4px; }
 
 ::selection {
   color: white;
@@ -122,7 +130,11 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px 6px black; }
 .reveal p, .reveal small, .reveal ul, .reveal ol, .reveal div.large-tag {
-  text-shadow: 2px 2px 2px black; }
+  text-shadow: 1px 3px 3px black; }
+.reveal ul {
+  list-style: none;
+  margin: 0;
+  text-align: center; }
 .reveal h2.h1-style {
   font-size: 3.77em; }
 .reveal h1.h2-style,
@@ -134,6 +146,20 @@ body {
   font-size: 0.5em;
   letter-spacing: 0;
   text-transform: none; }
+.reveal section figure {
+  background-color: rgba(0, 0, 0, 0.85);
+  margin: 0;
+  padding: 0; }
+  .reveal section figure img {
+    border-width: 0;
+    margin-bottom: 0; }
+  .reveal section figure figcaption {
+    color: #cccccc;
+    font-size: 0.45em;
+    line-height: 1em;
+    margin: 0;
+    padding: 0.2em 0 0.75em;
+    text-align: center; }
 .reveal .large-tag {
   font-family: Menlo, monospace;
   font-size: 2.5em;
@@ -206,6 +232,9 @@ body {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
+.reveal .controls {
+  bottom: 30px; }
+
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
   border-right-color: #cff110; }

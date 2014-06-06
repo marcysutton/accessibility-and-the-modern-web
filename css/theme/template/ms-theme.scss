@@ -56,10 +56,12 @@
  *********************************************/
 
 body {
-  background: black url("dark_colors_background.jpg") repeat center top;
+  background: black url("backgrounds/sky.jpg") repeat-x center top;
+  background-size: cover;
 }
 
 .reveal {
+  background-color: rgba(0, 0, 0, 0.3);
 	font-family: $mainFont;
 	font-size: $mainFontSize;
 	font-weight: 200;
