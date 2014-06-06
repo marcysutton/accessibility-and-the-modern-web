@@ -65,7 +65,7 @@ body {
 	font-family: $mainFont;
 	font-size: $mainFontSize;
 	font-weight: 200;
-	letter-spacing: -0.02em;
+	letter-spacing: -0.01em;
 	color: $mainColor;
 
   pre code {
@@ -128,7 +128,11 @@ body {
   p, small, ul, ol, div.large-tag {
     text-shadow: $paragraphTextShadow;
   }
-
+  ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+  }
   h2.h1-style {
     font-size: 3.77em;
   }
@@ -143,6 +147,26 @@ body {
     font-size: 0.5em;
     letter-spacing: 0;
     text-transform: none;
+  }
+  section {
+    figure {
+      background-color: $transparentBlack;
+      margin: 0;
+      padding: 0;
+      
+      img {
+        border-width: 0;
+        margin-bottom: 0;
+      }
+      figcaption {
+        color: $tertiaryColor;
+        font-size: 0.45em;
+        line-height: 1em;
+        margin: 0;
+        padding: 0.2em 0 0.75em;
+        text-align: center;
+      }
+    }
   }
   .large-tag {
     font-family: $codeFont;
@@ -246,7 +270,9 @@ body {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
-
+.reveal .controls {
+  bottom: 30px;
+}
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
 	border-right-color: $linkColor;
