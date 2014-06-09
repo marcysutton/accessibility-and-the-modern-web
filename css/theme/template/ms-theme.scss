@@ -61,7 +61,7 @@ body {
 }
 
 .reveal {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
 	font-family: $mainFont;
 	font-size: $mainFontSize;
 	font-weight: 200;
@@ -78,7 +78,7 @@ body {
   footer {
     background-color: $transparentBlack;
     bottom: 0px;
-    height: 30px;
+    height: 40px;
     left: 0;
     font-size: 47%;
     line-height: 1.25em;
@@ -90,7 +90,7 @@ body {
     .copyright {
       display: inline-block;
       color: $tertiaryColor;
-      padding: 0px 15px;
+      padding: 5px 15px;
       letter-spacing: -0.01em;
       font-style: italic;
       vertical-align: middle;
@@ -128,18 +128,15 @@ body {
   p, small, ul, ol, div.large-tag {
     text-shadow: $paragraphTextShadow;
   }
-  ul {
-    list-style: none;
-    margin: 0;
-    text-align: center;
-  }
-  h2.h1-style {
+  h1, h2.h1-style {
     font-size: 3.77em;
   }
+  h2,
   h1.h2-style,
   h3.h2-style {
-    font-size: 2.11em;
+    font-size: 2.75em;
   }
+  h3,
   h2.h3-style {
     font-size: 1.55em;
   }
@@ -168,6 +165,26 @@ body {
       }
     }
   }
+  .left-align {
+    text-align: left;
+
+    p {
+      margin-bottom: 0.75em;
+    }
+  }
+  .big-italic {
+    font-size: 2em;
+    font-style: italic;
+    font-weight: normal;
+    text-transform: none;
+
+    &.smaller {
+      font-size: 1.5em;
+    }
+    &.smallest {
+      font-size: 1.15em;
+    }
+  }
   .large-tag {
     font-family: $codeFont;
     font-size: 2.5em;
@@ -176,40 +193,55 @@ body {
   .muted {
     color: $mutedColor;
   }
-  ul.checkboxes {
-    li {
-      list-style: none;
-      line-height: 1.25em;
-      margin-bottom: 0.5em;
-      text-indent: -1.5em;
+  ul {
+    font-size: $paragraphFontSize;
+    line-height: $paragraphLineHeight;
+    list-style: none;
+    margin: 0;
+    text-align: center;
 
-      &:before {
-        content: '\2610';
-        font-size: 1.5em;
-        margin-right: 0.25em;
-      }
-      &.checked:before {
-        content: '\2611';
+    li {
+      margin-bottom: 0.25em;
+    }
+    &.left-aligned {
+      list-style: disc;
+      text-align: left;
+    }
+    &.checkboxes {
+      li {
+        list-style: none;
+        line-height: 1.25em;
+        margin-bottom: 0.5em;
+        text-indent: -1.5em;
+
+        &:before {
+          content: '\2610';
+          font-size: 1.5em;
+          margin-right: 0.25em;
+        }
+        &.checked:before {
+          content: '\2611';
+        }
       }
     }
-  }
-  ul.spaced-list li {
-    margin-bottom: 0.5em;
-    margin-top: 0.75em;
-  }
-  ul.normal-list li {
-    letter-spacing: 0;
-    margin-bottom: 0.25em;
-  }
-  ul.smaller li {
-    font-size: 0.9em;
-    letter-spacing: 0;
-    line-height: 1.5em;
-    margin: 0;
-  }
-  ul.smallest li {
-    font-size: 0.75em;
-    letter-spacing: 0;
+    &.spaced-list li {
+      margin-bottom: 0.5em;
+      margin-top: 0.75em;
+    }
+    &.normal-list li {
+      letter-spacing: 0;
+      margin-bottom: 0.25em;
+    }
+    &.smaller li {
+      font-size: 0.9em;
+      letter-spacing: 0;
+      line-height: 1.5em;
+      margin: 0;
+    }
+    &.smallest li {
+      font-size: 0.75em;
+      letter-spacing: 0;
+    }
   }
 }
 /*********************************************
@@ -257,6 +289,12 @@ body {
   	    -ms-transition: all .2s linear;
   	     -o-transition: all .2s linear;
   	        transition: all .2s linear;
+
+    &.plain {
+      background-color: transparent;
+      border-width: 0;
+      box-shadow: none;
+    }
   }
 
 	a:hover img {
@@ -430,21 +468,25 @@ body {
       background: none;
     }
   }
-  .name-slide p {
-    font-size: 0.75em;
-    margin-bottom: 3%;
+  p.byline {
+    font-size: 1.25em;
+    margin-bottom: 4%;
+    a {
+      color: $white;
+    }
   }
   a.substantial-logo {
-    color: $white;
+    color: $linkColor;
+    font-size: 0.85em;
     font-family: 'substantial-ico-fonts';
     letter-spacing: 0.3em;
     margin-left: 2%;
     position: relative;
+    text-shadow: none;
 
     &:hover, &:focus {
-      color: $linkColor;
+      color: $white;
       text-decoration: none;
-      -webkit-transition: color 0.25s ease-out;
     }
   }
   .image-headline {
