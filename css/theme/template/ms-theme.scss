@@ -133,11 +133,13 @@ body {
   }
   h2,
   h1.h2-style,
-  h3.h2-style {
+  h3.h2-style,
+  p.h2-style {
     font-size: 2.75em;
   }
   h3,
-  h2.h3-style {
+  h2.h3-style,
+  p.h3-style {
     font-size: 1.55em;
   }
   small {
@@ -261,8 +263,6 @@ body {
   }
 	a:not(.image):hover {
 		color: $linkColorHover;
-
-		text-shadow: none;
 		border: none;
 	}
 
