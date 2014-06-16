@@ -1,0 +1,85 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww17080\viewh13480\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs28 \cf0 Accessibility and the Modern Web\
+\
+SLIDE 1\
+HI!!! How many of you are visual designers? User experience? Developers? Project Managers? Other? I think it\'92s safe to assume we\'92re all here because we design or build digital experiences in some capacity.\
+\
+I want to talk about our assumptions about users. In our day-to-day work as digital craftspeople, we tend to think not far beyond our own skills or abilities. We assume people can use the mouse, appreciate subtle expressions of color and gain understanding from visual communications. I want to challenge these assumptions and hopefully open our minds to a much broader definition of user experience. One reflective of more people in our world.\
+\
+SLIDE 2\
+I\'92m Marcy Sutton, Developer at Substantial and Co-Chair of the Seattle chapter of Girl Develop It. I love the intersection of JavaScript, HTML and CSS, as well as finding & creating beautiful digital experiences. I\'92m passionate about accessibility because it adds meaning to our daily work. Artistically, I\'92m inspired by music, street art and nature.\
+\
+SLIDE 3\
+JUST SAY TOPICS DONT EXPLAIN THEM\
+\
+SLIDE 4\
+Specifically, today we\'92re going to focus on empathy in design. My goal is to give you some things to think about on your day-to-day projects to benefit persons with disabilities who are very often left out.\
+\
+SLIDE 5\
+So let\'92s talk about Accessibility. HTML semantics: the type of tag matters to assistive technology. A button is announced as a button (an interactive control), a heading denotes page structure (not style), forms are communicated by a different mode telling AT users they are inside of a form. \
+\
+SLIDE 6\
+Color blindness or color vision deficiency affects a significant population. In WCAG 2.0 there are two levels of ratios for small non-bold text and medium-bold/large non-bold text, depending on your level of stringency. {\field{\*\fldinst{HYPERLINK "http://leaverou.github.io/contrast-ratio/#"}}{\fldrslt This tool by Lea Verou}} is great for checking foreground and background colors. Do your users a favor and don\'92t just show a square of a color. Provide a text version so people with color deficiencies can identify it.\
+\
+SLIDE 7\
+Text alternatives: alt text, form labels, offscreen text for anything in a page that is missing context. Menu icons, extra headings, text embedded in CSS background images. This helps non-visual users gain understanding from a webpage.\
+\
+SLIDE 8\
+Keyboard access. Often the most forgotten yet the largest audience. Have you broken an arm? Had the batteries run out of your mouse? Had poor motor control? Known someone who used a screen reader or couldn\'92t use a mouse? We must add focus states to our CSS and make all interactivity work with a keyboard. Add visual feedback for focus just like you would for hover or touch. It\'92s not rocket science. People will really benefit from it!\
+\
+SLIDE 9\
+There\'92s always someone who says accessibility \'93doesn\'92t apply to us.\'94 It\'92s too niche, that\'92s not our audience, blind people have no need for our product. \
+\
+SLIDE 10\
+Minimum Viable Product == Minimum Feature Set. Strategy used for fast and quantitative market testing of a product or product feature.\
+\
+SLIDE 11\
+Early Adopters, subset of possible customers. More forgiving, likely to give feedback, able to grasp a product vision from an early prototype or marketing info\
+\
+SLIDE 12\
+Tension between minimal features and engineering code that will be reused in some way. Because few people go back to clean it up later. I was on a project once that had a UI pattern added just like this. Except by hiding tools behind a mouse hover, it created two problems: keyboard accessibility and mobile.\
+\
+SLIDE 13\
+It\'92s impossible to please everyone. A form of color blindness could make your color palette be completely unusable, while other health conditions would favor inverse colors. One strategy that might help even just a little bit is to add personalization options. Let\'92s talk about a few.\
+\
+SLIDE 14\
+There\'92s been a feature in Gmail for at least a year where if you hit the question mark key, it brings up this panel of additional keyboard shortcuts. Except you can\'92t enable them with the keyboard. The link looks like a link, but it hasn\'92t been wired up with the enter key (which is how links work by default). Ok, so these shortcuts might be for super nerds. But it is dead simple to wire up this link. I don\'92t understand why the Gmail folks haven\'92t done it yet. This could be better.\
+\
+SLIDE 15\
+A better effort is in Trello. They have a setting for \'93Enable Color Blind Friendly Mode\'94 that adds stripy backgrounds to various labels throughout the app. I\'92d argue this doesn\'92t go far enough. But their hearts are in the right place.\
+\
+SLIDE 16\
+A simple, yet effective technique is to allow users to invert the color scheme of your website. Easy Chirp is an accessible alternative to the Twitter app that lets you add alt text to the pictures in your tweets. Here I have an animated gif of the switch when you click the link in the footer. Letting users change font size or theme of your site or application goes a long way. If you need to know how many people are using the feature to justify the design and engineering cost, try it in a smaller part of your site and add analytics to track usage.\
+\
+SLIDE 17\
+Back to empathy. This is an empathy map, a technique for developing user personas by brainstorming their needs. But even this is missing information. What do they NOT hear? What do they NOT see?\
+\
+SLIDE 18\
+This should be on the minds of anyone designing or building software: how will this improve people\'92s lives? This speaks to the tension I felt working at an ad agency. Why does any of this matter?\
+\
+SLIDE 19\
+We have opportunities working in digital product or application design. We can improve peoples\'92 lives by helping them land jobs.\
+\
+SLIDE 20\
+If you are working on a banking product, you can help people manage their money. Maybe not to Scrooge McDuck level, but still pretty well.\
+\
+SLIDE 21\
+Lastly, we can set people up for success by improving the accessibility of online shopping. \
+[ DEMO ]\
+It\'92s pretty dismal out there. Is style only reserved for people who can see it? NO! As designers and developers of online shopping sites, we can empower all people to make informed style choices. Improve someone\'92s confidence, make them feel good, maybe get them a second date.\
+\
+SLIDE 22\
+Extend conveniences to people with abilities that are different than your own. People really appreciate it when we take the time to improve the usability of our digital projects. Because accessibility isn\'92t about compliance. It\'92s about people. Thank you.\
+\
+\
+\
+\
+\
+\
+\
+}
