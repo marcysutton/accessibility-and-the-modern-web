@@ -273,7 +273,7 @@ body {
 	quotes: none;
 }
 
-.reveal blockquote {
+.reveal blockquote:not(.twitter-tweet) {
 	display: block;
 	position: relative;
 	width: 70%;

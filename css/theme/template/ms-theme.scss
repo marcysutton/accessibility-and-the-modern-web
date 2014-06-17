@@ -91,9 +91,17 @@ body {
       display: inline-block;
       color: $tertiaryColor;
       padding: 5px 15px;
-      letter-spacing: -0.01em;
       font-style: italic;
       vertical-align: middle;
+    }
+    .footer-link {
+      display: block;
+      float: right;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      padding: 5px 15px;
+      position: relative;
+      z-index: 1;
     }
     [aria-hidden=true] {
       color: $secondaryColor;
@@ -125,7 +133,7 @@ body {
   	text-transform: $headingTextTransform;
   	text-shadow: $headingTextShadow;
   }
-  p, small, ul, ol, div.large-tag {
+  p, small, ul, ol, div.large-tag, figcaption {
     text-shadow: $paragraphTextShadow;
   }
   h1, h2.h1-style {
@@ -147,19 +155,30 @@ body {
     letter-spacing: 0;
     text-transform: none;
   }
+  blockquote {
+    strong {
+      color: $linkColor;
+      font-size: 115%;
+    }
+  }
   section {
     figure {
-      background-color: $transparentBlack;
       margin: 0;
       padding: 0;
-      
+      position: relative;
+
       img {
-        border-width: 0;
-        margin-bottom: 0;
+        margin: 0;
+      }
+      .note {
+        color: $alertColor;
+        font-style: italic;
+        position: absolute;
+        text-shadow: $headingTextShadow;
       }
       figcaption {
         color: $tertiaryColor;
-        font-size: 0.45em;
+        font-size: 0.65em;
         line-height: 1em;
         margin: 0;
         padding: 0.2em 0 0.75em;
