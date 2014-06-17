@@ -156,6 +156,8 @@ body {
     text-transform: none;
   }
   blockquote {
+    text-shadow: $paragraphTextShadow;
+
     strong {
       color: $linkColor;
       font-size: 115%;
@@ -171,10 +173,11 @@ body {
         margin: 0;
       }
       .note {
-        color: $alertColor;
+        background-color: $darkColor;
+        color: $white;
         font-style: italic;
+        padding: 3px 5px;
         position: absolute;
-        text-shadow: $headingTextShadow;
       }
       figcaption {
         color: $tertiaryColor;

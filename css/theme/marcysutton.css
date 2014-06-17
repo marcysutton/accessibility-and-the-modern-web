@@ -153,9 +153,11 @@ body {
   font-size: 0.5em;
   letter-spacing: 0;
   text-transform: none; }
-.reveal blockquote strong {
-  color: #cff110;
-  font-size: 115%; }
+.reveal blockquote {
+  text-shadow: 1px 3px 3px black; }
+  .reveal blockquote strong {
+    color: #cff110;
+    font-size: 115%; }
 .reveal section figure {
   margin: 0;
   padding: 0;
@@ -163,10 +165,11 @@ body {
   .reveal section figure img {
     margin: 0; }
   .reveal section figure .note {
-    color: red;
+    background-color: black;
+    color: white;
     font-style: italic;
-    position: absolute;
-    text-shadow: 2px 2px 6px black; }
+    padding: 3px 5px;
+    position: absolute; }
   .reveal section figure figcaption {
     color: #cccccc;
     font-size: 0.65em;
