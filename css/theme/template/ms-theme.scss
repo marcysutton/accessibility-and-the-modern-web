@@ -68,12 +68,15 @@ body {
 	letter-spacing: -0.01em;
 	color: $mainColor;
 
-  pre code {
+  pre {
     background-color: black;
-    color: $tertiaryColor;
-    font-size: 1.15em;
-    line-height: 1.45em;
-    max-height: 500px;
+
+    code {
+      color: $tertiaryColor;
+      font-size: 1.15em;
+      line-height: 1.45em;
+      max-height: 500px;
+    }
   }
   footer {
     background-color: $transparentBlack;
@@ -119,6 +122,10 @@ body {
   display: block;
   left: -500000px;
   position: absolute;
+}
+.clear {
+  clear: both;
+  display: block;
 }
 /*********************************************
  * HEADERS
@@ -416,12 +423,19 @@ body {
     margin-right: 2%;
   }
 }
-.reveal .twoThirdsCol pre {
-  font-size: .59em;
-  margin-top: 0;
-  width: 100%;
+.reveal .twoThirdsCol,
+.reveal .halfCol {
+   pre {
+    font-size: .59em;
+    margin-top: 0;
+    width: 100%;
+  }
 }
-
+.reveal .halfCol {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
 /*********************************************
  * Slide Styles
  *********************************************/

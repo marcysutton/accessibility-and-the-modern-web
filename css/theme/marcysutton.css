@@ -80,12 +80,13 @@ body {
   font-weight: 200;
   letter-spacing: -0.01em;
   color: #eeeeee; }
-  .reveal pre code {
-    background-color: black;
-    color: #cccccc;
-    font-size: 1.15em;
-    line-height: 1.45em;
-    max-height: 500px; }
+  .reveal pre {
+    background-color: black; }
+    .reveal pre code {
+      color: #cccccc;
+      font-size: 1.15em;
+      line-height: 1.45em;
+      max-height: 500px; }
   .reveal footer {
     background-color: rgba(0, 0, 0, 0.85);
     bottom: 0px;
@@ -124,6 +125,10 @@ body {
   display: block;
   left: -500000px;
   position: absolute; }
+
+.clear {
+  clear: both;
+  display: block; }
 
 /*********************************************
  * HEADERS
@@ -344,10 +349,16 @@ body {
     float: left;
     margin-right: 2%; }
 
-.reveal .twoThirdsCol pre {
+.reveal .twoThirdsCol pre,
+.reveal .halfCol pre {
   font-size: .59em;
   margin-top: 0;
   width: 100%; }
+
+.reveal .halfCol {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%; }
 
 /*********************************************
  * Slide Styles
