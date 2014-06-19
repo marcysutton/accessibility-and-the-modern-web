@@ -54,7 +54,7 @@
 
         <section id="slide3">
           <h2>Empathy in Design</h2>
-          <div style="background: transparent url(img/empathy_map.gif) center center no-repeat; background-size: auto 100%; min-height: 430px; width: 100%;">
+          <div style="background: transparent url(img/empathy_map.gif) center center no-repeat; background-size: auto 100%; min-height: 430px; width: 100%; margin-bottom: 0.5em;">
             <div style="background: url(img/empathy_map-not-hear.gif) center center no-repeat; background-size: auto 100%; min-height: 430px; width: 100%;" class="fragment">
               <div style="background: url(img/empathy_map-not-hear-see.gif) center center no-repeat; background-size: auto 100%; min-height: 430px; width: 100%;" class="fragment"></div>
             </div>
@@ -72,39 +72,32 @@
 					</ul>
 				</section>
 
-				<!--<section id="slide5">
-          <h2>Who?</h2>
-          <ul>
-            <li>Blind, Vision Impaired</li>
-            <li>Deaf &amp; Hard of Hearing</li>
-            <li>Limited Mobility</li>
-            <li>Color-Blind</li>
-            <li>Cognitively Disabled</li>
-            <li class="fragment" style="font-style: italic; margin-top: 4%;">Everyone.</li>
-            </ul>
-				</section>-->
+				<section id="slide5">
+					<p class="h3-style">Accessibility</p>
+					<h2>Keyboard Access</h2>
+					<p><a href="http://virginamerica.com/" target="_blank" title="Link opens in a new window">Example: Virgin America</a></p>
+				</section>
 
 				<section id="slide6">
 					<p class="h3-style">Accessibility</p>
-					<h2>HTML Semantics</h2>
+					<h2>Color Contrast</h2>
+					<p><a href="http://seattleartmuseum.org" target="_blank" title="Link opens in a new window">Example: SAM</a> <span aria-hidden="true">|</span> <a href="http://leaverou.github.io/contrast-ratio/#%23999-on-%23E3E0DD" target="_blank" title="Link opens in a new window">Contrast Ratio</a></p>
 				</section>
 
 				<section id="slide7">
 					<p class="h3-style">Accessibility</p>
-					<h2>Color Contrast</h2>
+					<h2>Text Alternatives</h2>
+					<figure>
+						<img tabIndex="0" src="img/author_photo_crop.jpg" alt="How to take a good author photo. Image 1: do not create direct eye contact. Image 2: Act like you've got better things to do. Image 3: Go viral. Include cats. Image 4: Represent your co-author well.">
+					</figure>
 				</section>
 
 				<section id="slide8">
 					<p class="h3-style">Accessibility</p>
-					<h2>Text Alternatives</h2>
+					<h2>HTML Semantics</h2>
 				</section>
 
-				<section id="slide9">
-					<p class="h3-style">Accessibility</p>
-					<h2>Keyboard Access</h2>
-				</section>
-
-        <section id="slide10">
+        <section id="slide9">
           <h2>RWD + A11Y = ♥</h2>
           <figure class="stdPhoto" style="max-width: 660px; margin: 0 auto;">
             <img src="img/brad-frost-devices.jpg" alt="Brad Frost's photo of a bajillion digital devices" style="display: inline-block; max-height: 540px;">
@@ -116,13 +109,29 @@
           </figure>
         </section>
 
-        <!--<section id="slide11">
-          <p style="font-size: 1.5em; margin-bottom: .5em;"><em>What About</em></p>
-          <h2 class="h1-style">Media Queries</h2>
-          <h2>And Screen Readers?</h2>
-        </section>-->
+        <section id="slide10">
+        	<h2>Really-hidden vs. offscreen</h2>
+          <div class="halfCol">
+    				  <pre><code class="css">
+  .reallyHidden {
+    display: none;
+    visibility: hidden;
+  }
+    				  </code></pre>
+  				  </div>
+  				  <div class="halfCol">
+    				  <pre><code class="css">
+  .offscreen {
+    display: block;
+    left: -50000px;
+    position: absolute;
+  }
+    				  </code></pre>
+  				  </div>
+  				  <p><em>CSS</em></p>
+        </section>
 
-        <section id="slide12">
+        <section id="slide11">
           <h2>Freedom</h2>
           <div style="min-height: 550px;">
             <blockquote class="twitter-tweet" align="center" data-conversation="none" lang="en" data-theme="dark"><p><a href="https://twitter.com/marcysutton">@marcysutton</a> iPhone was the 1ST piece of tech I could use out of the box. Normally need sighted help to get screen reader installed etc.</p>&mdash; Steve Sawczyn (@steveofmaine) <a href="https://twitter.com/steveofmaine/statuses/388539435643441152">October 11, 2013</a></blockquote>
@@ -131,7 +140,7 @@
           </div>
         </section>
 
-				<section id="slide13">
+				<section id="slide12">
 					<h2>Doesn't apply to us</h2>
 					<img style="max-height: 500px;" src="img/empathy_romney.jpg" alt="Mitt Romney: I have empathy, damn it!">
 				</section>
@@ -173,7 +182,7 @@
         <section id="slide20">
           <h2>H&amp;R Block</h2>
           <blockquote>&ldquo;The case, brought by the US Department of Justice, argued that <strong>individuals with disabilities were denied full and equal enjoyment</strong> of largely tax-preparation focused goods and services provided through H&amp;R Block’s website and mobile applications.&rdquo;</blockquote>
-          <p><a href="http://www.accessiq.org/news/news/2014/03/us-accessibility-court-case-against-hr-block-settled">Source</a></p>
+          <p><a href="http://www.accessiq.org/news/news/2014/03/us-accessibility-court-case-against-hr-block-settled" target="_blank" title="Link opens in a new window">Source</a> <span aria-hidden="true">|</span> <a href="http://www.law360.com/articles/537320/doj-demands-accessible-websites-apps-and-pos-devices" target="_blank" title="Link opens in a new window">More</a></p>
         </section>
 
         <section id="slide21">
@@ -207,6 +216,11 @@
             <li><a href="http://webaim.org/articles/screenreader_testing/" target="_blank" title="Link opens in a new window">Screen Reader Testing</a></li>
             <li><a href="http://www.w3.org/WAI/intro/wcag.php" target="_blank" title="Link opens in a new window">WCAG 2.0 Guidelines</a></li>
           </ul>
+				</section>
+
+				<section id="slide25">
+					<h2>Thank you.</h2>
+					<p class="big-italic"><a href="http://tiny.cc/a11y-hive">http://tiny.cc/a11y-hive</a></p>
 				</section>
 			</div>
 
